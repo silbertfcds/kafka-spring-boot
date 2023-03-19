@@ -1,6 +1,7 @@
 package com.firmino.strconsumer.config;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
@@ -10,9 +11,11 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.listener.RecordInterceptor;
 
 import java.util.HashMap;
 
+@Log4j2
 @RequiredArgsConstructor
 @Configuration
 public class StringConsumerFactoryConfig {
@@ -35,4 +38,5 @@ public class StringConsumerFactoryConfig {
         factory.setConsumerFactory(consumerFactory);
         return factory;
     }
+
 }
