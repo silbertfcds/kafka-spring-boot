@@ -17,13 +17,13 @@ public class StringConsumerKafkaListener {
         throw new TimeoutException("Exception");
     }
 
-//    @StrConsumerListener(groupId = "group-1")
-//    public void listenerTwo(String message) {
-//        log.info("Listener Two ::: Receive message: {}", message);
-//    }
-//
-//    @StrConsumerListener(groupId = "group-2")
-//    public void history(String message) {
-//        log.info("history ::: Receive message: {}", message);
-//    }
+    @StrConsumerListener(groupId = "group-1")
+    public void listenerTwo(String message) {
+        log.info("Listener Two ::: Receive message: {}", message);
+    }
+
+    @StrConsumerListener(groupId = "group-2")
+    public void history(String message) {
+        log.info("history ::: Receive message: {}", message);
+    }
 }
